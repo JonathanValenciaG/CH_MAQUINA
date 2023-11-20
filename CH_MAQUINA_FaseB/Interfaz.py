@@ -112,9 +112,17 @@ def ejecutar(memoria):
     if(len(errores) == 0):
         ejecutar_codigo_ch(codigo_ch)
         nom = str(ntpath.basename(archivoch))
+        tabla_ancha
+        tabla_ancha.insert("", 'end', text = "   "+str("001"), values=(nom))
+
         for j in range(0, len(variables)):
-            tabla_var.insert("", 'end', text = "   "+str(1), values=(variables[j], valores_variables[j]))
-        #   tabla_memoria.insert("", 'end',text =str(j), values=(variables[j],))
+            # posicion = codigo_ch.index(variables[j])
+            posicion = 0
+            tabla_var.insert("", 'end', text = "   "+str(posicion), values=(variables[j], valores_variables[j]))
+
+        for i in range(0, len(etiquetas)):
+
+            tabla_eti.insert("", 'end', text = "   "+str(posicion), values=(etiquetas[i], valores_etiquetas[i]))
 
         # for varible in variables():
         #     tabla_var.insert("", 'end', text = "   "+str(1), values=(varible, "95"))

@@ -7,6 +7,7 @@ errores = []  #lista de errores
 variables = [] # Lista de variables
 valores_variables = []
 tipo_variables = []
+posicion_varibles = []
 etiquetas = []
 valores_etiquetas = []
 quantum = 5
@@ -24,6 +25,7 @@ acumulador = [0]  #solo es un valor acumulador[0]
 tam_kernel = 9 # 10*z+9 , z =0
 tam_memoria = [100]  
 
+
 def datos_ker_mem(tam_ker, tam_mem):
     tam_kernel =int(tam_ker)
     tam_memoria[0] =int(tam_mem)
@@ -31,8 +33,9 @@ def datos_ker_mem(tam_ker, tam_mem):
 
 
 def ejecutar_codigo_ch(codigo_ch):
-    print("ANTES DE EJECUTAR: ", variables)
-    print("ANTES DE EJECUTAR: ", valores_variables)
+    print("VARIABLES: ", variables)
+    print("VALORES VARIABLES: ", valores_variables)
+    print("POSICION VARIABLES: ", posicion_varibles)
     print("llegamos con acumulador[0]", acumulador)
     print()
     item = []

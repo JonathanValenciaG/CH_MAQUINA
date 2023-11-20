@@ -7,6 +7,7 @@ def verificar_sintaxis(codigo_ch):
     variables.clear()
     valores_variables.clear()
     tipo_variables.clear()
+    posicion_varibles.clear()
     etiquetas.clear()
     valores_etiquetas.clear()
     
@@ -122,6 +123,8 @@ def error_funcion_nueva(item, lin_rev):
         variables.append(item[1])
         valores_variables.append(item[3])
         tipo_variables.append(item[2])
+
+                
 
 def error_funcion_Y_O_NO(item, lin_rev): 
     if(len(item)>4): 
