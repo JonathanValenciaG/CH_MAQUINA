@@ -79,10 +79,6 @@ def abrirArchivo():
         #Cada linea la inserta en la tabla
         tablaCod.insert("", 'end',text = "          " + str(i+1), values=(codigo_ch[i],))
 
-    # memoria = memoria*tam_kernel
-    print("MEMORIA")
-    print(memoria)
-
 
     todosCH.append(codigo_ch)
     print('TODOS CH: ', todosCH)
@@ -153,8 +149,12 @@ def ejecutar(memoria):
             tabla_var.insert("", 'end', text = "   "+str(posicion), values=(variables[j], valores_variables[j]))
 
         for i in range(0, len(etiquetas)):
-
             tabla_eti.insert("", 'end', text = "   "+str(posicion), values=(etiquetas[i], valores_etiquetas[i]))
+        
+        #mostrar resultado
+        respuesta_lab.config(text="Resultado: {}".format(valores_variables[3]))
+
+
 
 
 
@@ -347,6 +347,12 @@ kernel_final_lab = Label(FrameImag, text = "Kernel: " + str(tam_ker),  font= ('C
 memoria_final_lab = Label(FrameImag, text = "Memoria: " + str(tam_mem),  font=('Calibri', 12,'bold'))
 kernel_final_lab.place(x = 70, y = 400)
 memoria_final_lab.place(x = 170, y = 400)
+
+
+
+respuesta_lab =  ttk.Label(FrameImag, text = "Respuesta")
+respuesta_lab.place(x = 120, y = 500)
+
 
 # Tabla Memoria
 TablaMem.config(bd = 13) 

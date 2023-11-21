@@ -39,11 +39,11 @@ def datos_ker_mem(tam_ker, tam_mem):
 
 
 def ejecutar_codigo_ch(codigo_ch):
-    print("VARIABLES: ", variables)
-    print("VALORES VARIABLES: ", valores_variables)
-    print("POSICION VARIABLES: ", posicion_varibles)
-    print("llegamos con acumulador[0]", acumulador)
-    print()
+    # print("VARIABLES: ", variables)
+    # print("VALORES VARIABLES: ", valores_variables)
+    # print("POSICION VARIABLES: ", posicion_varibles)
+    # print("llegamos con acumulador[0]", acumulador)
+    # print()
     item = []
     texto_monitor.clear()
     texto_impresora.clear()
@@ -162,7 +162,6 @@ def ejecutar_codigo_ch(codigo_ch):
         item.clear()
     
     print("LA RESPUESTA ES: ", valores_variables[3])
-    print(acumulador)
 
 
 def consultar_valor_variable(palabra):
