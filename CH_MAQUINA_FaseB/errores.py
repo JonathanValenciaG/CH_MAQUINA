@@ -85,7 +85,7 @@ def verificar_sintaxis(codigo_ch):
     # Si la memoria sumado con el codido del archivo es mayor al tamaño de la memoria dada es un error 
     # Tamaño arreglo no es suficiente
     if(len(memoria)+len(codigo_ch) > tam_memoria[0]):
-        errores.append("CRITICO: MEMORIA INSIFICIENTE")
+        errores.append("CRITICO: MEMORIA INSUFICIENTE")
         
 
 

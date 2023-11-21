@@ -28,35 +28,67 @@ def validarDatos(tam_ker, tam_mem, una_ventana):
 
 
 
+# def abrirArchivo():
+#     # Se crean variables para manejar mejor los archivos
+#     global archivoch    
+#     global codigo_ch
+
+#     #En archivoch se guardara la direccion del archivo
+#     archivoch = filedialog.askopenfilename(initialdir="/CH_MAQUINA/ch", title="Abrir archivo CH", 
+#         #Flitypes para especificar el tipo de archivo que se admite en este caso .ch
+#         filetypes = (("Archivos CH", "*.ch"), ("Todo tipo de archivos", "*.*")))
+    
+#     # Si archivoch no esta vacio
+#     if archivoch != "":  
+#         #Abre el archivo 
+#         archivo = open(archivoch, 'r')   
+#         print("archivo leido correctamente")
+#         #Imprime el nombre dl archivo en la interfaz
+#         nomArch.configure(text = "Programa: " + str(ntpath.basename(archivoch)))
+        
+#         #Readlines devuelve una lista con cada linea del archivo, lo guarda en codigo_ch
+#         codigo_ch = archivo.readlines()
+#         archivo.close()
+
+#         # Recorre la lista con las lineas del archivo
+#         for i in range(0, len(codigo_ch)):
+#             #Cada linea la inserta en la tabla
+#             tablaCod.insert("", 'end',text = "          " + str(i+1), values=(codigo_ch[i],))
+
+#     todosCH.append(codigo_ch)
+#     print('TODOS CH: ', todosCH)
+
 def abrirArchivo():
-    # Se crean variables para manejar mejor los archivos
     global archivoch    
     global codigo_ch
 
-    #En archivoch se guardara la direccion del archivo
-    archivoch = filedialog.askopenfilename(initialdir="/CH_MAQUINA/ch", title="Abrir archivo CH", 
-        #Flitypes para especificar el tipo de archivo que se admite en este caso .ch
-        filetypes = (("Archivos CH", "*.ch"), ("Todo tipo de archivos", "*.*")))
-    
-    # Si archivoch no esta vacio
-    if archivoch != "":  
-        #Abre el archivo 
-        archivo = open(archivoch, 'r')   
-        print("archivo leido correctamente")
-        #Imprime el nombre dl archivo en la interfaz
-        nomArch.configure(text = "Programa: " + str(ntpath.basename(archivoch)))
-        
-        #Readlines devuelve una lista con cada linea del archivo, lo guarda en codigo_ch
-        codigo_ch = archivo.readlines()
-        archivo.close()
 
-        # Recorre la lista con las lineas del archivo
-        for i in range(0, len(codigo_ch)):
-            #Cada linea la inserta en la tabla
-            tablaCod.insert("", 'end',text = "          " + str(i+1), values=(codigo_ch[i],))
+    #Abre el archivo 
+    archivo = open('factorial.ch', 'r')  
+    archivoch =  archivo
+    print("archivo leido correctamente")
+    #Imprime el nombre dl archivo en la interfaz
+    # nomArch.configure(text = "Programa: " + str(ntpath.basename(archivoch)))
+    
+    #Readlines devuelve una lista con cada linea del archivo, lo guarda en codigo_ch
+    codigo_ch = archivo.readlines()
+    archivo.close()
+
+    # Recorre la lista con las lineas del archivo
+    for i in range(0, len(codigo_ch)):
+        #Cada linea la inserta en la tabla
+        tablaCod.insert("", 'end',text = "          " + str(i+1), values=(codigo_ch[i],))
+
+    # memoria = memoria*tam_kernel
+    print("MEMORIA")
+    print(memoria)
+
 
     todosCH.append(codigo_ch)
     print('TODOS CH: ', todosCH)
+
+
+
 
 
 #funcion para boton MOSTRAR MEMORIA
@@ -74,6 +106,7 @@ def Compilar(memoria):
     if(len(errores) == 0):
         # Guarda en memoria el archivo
         memoria += codigo_ch
+
         #Crea una ventana donde se confirma que no hay errores
         ventana_errores = Tk()
         ventana_errores.geometry("200x200")
@@ -111,9 +144,8 @@ def Compilar(memoria):
 def ejecutar(memoria):
     if(len(errores) == 0):
         ejecutar_codigo_ch(codigo_ch)
-        nom = str(ntpath.basename(archivoch))
-        tabla_ancha
-        tabla_ancha.insert("", 'end', text = "   "+str("001"), values=(nom))
+        # nom = str(ntpath.basename(archivoch))
+        # tabla_ancha.insert("", 'end', text = "   "+str("001"), values=(nom))
 
         for j in range(0, len(variables)):
             # posicion = codigo_ch.index(variables[j])
@@ -123,10 +155,6 @@ def ejecutar(memoria):
         for i in range(0, len(etiquetas)):
 
             tabla_eti.insert("", 'end', text = "   "+str(posicion), values=(etiquetas[i], valores_etiquetas[i]))
-
-        # for varible in variables():
-        #     tabla_var.insert("", 'end', text = "   "+str(1), values=(varible, "95"))
-
 
 
 

@@ -27,8 +27,14 @@ tam_memoria = [100]
 
 
 def datos_ker_mem(tam_ker, tam_mem):
+    #Si cambian los tamaños del kernel y memoria los actualiza
     tam_kernel =int(tam_ker)
     tam_memoria[0] =int(tam_mem)
+
+    #Actualiza la memoria con el tamaño del kernel 
+    ker = tam_kernel+1
+    tam_ker = ['KERNEL']*ker
+    memoria.extend(tam_ker)
     # print("ASIGNAMOS y ahora tam_memoria y tam_mem son", tam_memoria, " y " , tam_kernel)
 
 
@@ -156,6 +162,7 @@ def ejecutar_codigo_ch(codigo_ch):
         item.clear()
     
     print("LA RESPUESTA ES: ", valores_variables[3])
+    print(acumulador)
 
 
 def consultar_valor_variable(palabra):
@@ -215,6 +222,9 @@ def funcion_vaya(item):
     return consultar_valor_etiqueta(item[1])
 
 def actualizar_memoria(memoria): 
+
     memoria[0] = "ACUMULADOR 🡆 " + str(acumulador[0])
+    # valorAcumulador = "ACUMULADOR 🡆 " + str(acumulador[0])
+    # memoria.insert(0,valorAcumulador)
 
 
